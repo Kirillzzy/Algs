@@ -4,28 +4,13 @@ using namespace std;
 
 #define ll long long
 
-int p[500][500][500];
-
-struct coor{
-	int i,j,t,val;
-};
-
-coor make_coor(int i,int j,int t,int val){
-	coor a;
-	a.i = i;
-	a.j = j;
-	a.t = t;
-	a.val = val;
-	return a;
-}
-
 int main(){
 	int n,m,k;
 	cin>>n>>m>>k;
-	//
 	n++;
 	m++;
 	k++;
+	int p[n][m][k];
 	vector<int>res;
 	vector<int>a(n);
 	vector<int>b(m);
@@ -63,30 +48,29 @@ int main(){
    	i=n-1;
    	j=m-1;
    	t=k-1;
-    while (i>0&&j>0&&t>0) {
-        if (a[i] == b[j]&&b[j]==c[t]) {
-            res.push_back(a[i]);
-            i--;
-            j--;
-            t--;
-        }
-        else {
-            if (p[i-1][j][t] >= p[i][j-1][t]&&p[i-1][j][t]>=p[i][j][t-1])
-                i--;
-            else if(p[i][j-1][t] >= p[i-1][j][t]&&p[i][j-1][t]>=p[i][j][t-1])
-                j--;
-            else{
-            	t--;
-            }
-        }
-    }
-    reverse(res.begin(),res.end());
-    assert(res.size()==p[n-1][m-1][k-1]);
-    for(int i=0;i<res.size();i++){
-    	cout<<res[i]<<" ";
-    }
+   	while (i>0&&j>0&&t>0) {
+		if (a[i] == b[j]&&b[j]==c[t]) {
+		    res.push_back(a[i]);
+		    i--;
+		    j--;
+		    t--;
+       		}
+		else {
+		    if (p[i-1][j][t] >= p[i][j-1][t]&&p[i-1][j][t]>=p[i][j][t-1])
+			i--;
+		    else if(p[i][j-1][t] >= p[i-1][j][t]&&p[i][j-1][t]>=p[i][j][t-1])
+			j--;
+		    else{
+			t--;
+		    }
+		}
+   	 }
+    	reverse(res.begin(),res.end());
+    	for(int i=0;i<res.size();i++){
+		cout<<res[i]<<" ";
+	}
 
-    cout<<endl;
+	cout<<endl;
 	return 0;
 }
 
