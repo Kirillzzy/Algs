@@ -1,13 +1,4 @@
-// try_everyday.cpp: îïðåäåëÿåò òî÷êó âõîäà äëÿ êîíñîëüíîãî ïðèëîæåíèÿ.
-//
-
-#include "stdafx.h"
-#include<iostream>
-#include<string>
-#include<vector>
-#include<new>
-#include<map>
-#include<math.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
