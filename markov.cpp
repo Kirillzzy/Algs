@@ -1,15 +1,5 @@
-// try_everyday.cpp: îïðåäåëÿåò òî÷êó âõîäà äëÿ êîíñîëüíîãî ïðèëîæåíèÿ.
-//
 
-#include "stdafx.h"
-#include<iostream>
-#include<string>
-#include<vector>
-#include<algorithm>
-#include<new>
-#include<map>
-#include<time.h>
-#include<math.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -24,7 +14,6 @@ struct Rule
 		cout << left << "->" << (final ? "." : "") << right;
 	}
 	bool is_applicable(string s) {
-		//if(find(s,left)!=-1)
 		if (s.find(left) != -1)
 			return true;
 		else
@@ -33,11 +22,11 @@ struct Rule
 	int find(string wh, string what) {
 		int length = what.size();
 		int ok;
-		for (int i = 0;i<wh.size();i++) {
+		for (int i = 0; i<wh.size(); i++) {
 			if (wh[i] != what[0])
 				continue;
 			string ka;
-			for (int j = i;j<length + i;j++) {
+			for (int j = i; j<length + i; j++) {
 				ka += wh[j];
 			}
 			if (ka == what) {
@@ -47,7 +36,6 @@ struct Rule
 		return -1;
 	}
 	string apply(string s) {
-		//int a=find(s,left);
 		int a = s.find(left);
 		if (a != -1) {
 			s.replace(a, left.size(), right);
@@ -65,7 +53,7 @@ struct MarkovAlgorithm
 		}
 	}
 	string apply(string s) {
-		for (int i = 0;i<rules.size();i++) {
+		for (int i = 0; i<rules.size(); i++) {
 			bool ma = false;
 			bool k = rules[i].is_applicable(s);
 			if (k) {
