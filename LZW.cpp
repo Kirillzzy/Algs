@@ -1,11 +1,5 @@
 
-#include "stdafx.h"
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<unordered_map>
-#include<vector>
-#include<algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
@@ -13,7 +7,7 @@ int main()
 	string s;
 	getline(cin, s);
 	unordered_map<string, int>m;
-	for (int i = 0;i < 256;i++) {
+	for (int i = 0; i < 256; i++) {
 		char c = (char)i;
 		string v;
 		v += c;
@@ -22,7 +16,7 @@ int main()
 	string t;
 	int v = 256;
 	vector<int>vec;
-	for (int i = 0;i <= s.size();i++) {
+	for (int i = 0; i <= s.size(); i++) {
 		t += s[i];
 		if (m.count(t) > 0)
 			continue;
@@ -35,7 +29,7 @@ int main()
 	}
 	v = 256;
 	vector<string>ab;
-	for (int i = 0;i < 256;i++){
+	for (int i = 0; i < 256; i++){
 		char c = (char)i;
 		string s;
 		s += c;
@@ -43,7 +37,7 @@ int main()
 	}
 	int l;
 
-	for (int i = 0;i < vec.size()-1;i++) {
+	for (int i = 0; i < vec.size() - 1; i++) {
 		int b = vec[i];
 		int ser = vec[i + 1];
 		string b1 = (string)ab[vec[i]];
