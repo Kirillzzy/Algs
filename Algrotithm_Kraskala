@@ -41,16 +41,12 @@ bool comp(edge a, edge b){
 }
 
 int main() {
-	ifstream in;
-	ofstream out;
-	in.open("spantree2.in");
-	out.open("spantree2.out");
 	int n, m;
-	in >> n >> m;
+	cin >> n >> m;
 	vector<edge>g;
 	for(int i = 0; i < m; i++){
 		int a, b, c;
-		in >> a >> b >> c;
+		cin >> a >> b >> c;
 		edge e;
 		e.a = a;
 		e.b = b;
@@ -72,6 +68,6 @@ int main() {
 			cost += g[i].c;
 		}
 	}
-	out << cost << endl;
+	cout << cost << endl;
 	return 0;
 }
