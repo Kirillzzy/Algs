@@ -1,15 +1,4 @@
-// try_everyday.cpp: îïðåäåëÿåò òî÷êó âõîäà äëÿ êîíñîëüíîãî ïðèëîæåíèÿ.
-//
-
-#include "stdafx.h"
-#include<iostream>
-#include<string>
-#include<vector>
-#include<algorithm>
-#include<new>
-#include<map>
-#include<time.h>
-#include<math.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -20,6 +9,5 @@ int gcd(int a, int b) {
 }
 
 int main(){
-
 	return 0;
 }
